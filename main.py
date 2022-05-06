@@ -11,4 +11,4 @@ def videoplayer():
     return render_template('videoplayer.html', url=request.args.get('url'));
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
