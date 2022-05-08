@@ -10,6 +10,11 @@ def videoplayer():
     if not request.args.get('url'): return redirect('/')
     return render_template('videoplayer.html', url=request.args.get('url'));
 
+@app.route('/video/')
+def video():
+    if not request.args.get('url'): return redirect('/')
+    return render_template('videoplayer.html', url=request.args.get('url'));
+
 @app.route('/redditvideo/')
 def redditplayer():
     if not request.args.get('url'): return redirect('/')
