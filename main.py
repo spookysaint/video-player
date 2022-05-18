@@ -21,7 +21,7 @@ def redditplayer():
     return render_template('hls.html', url=request.args.get('url'));
 
 @app.route('/rvideo/')
-def redditplayer():
+def rplayer():
     if not request.args.get('url'): return redirect('/')
     return render_template('hls2.html', url=request.args.get('url'));
 
