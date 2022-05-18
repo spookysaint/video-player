@@ -18,7 +18,12 @@ def video():
 @app.route('/redditvideo/')
 def redditplayer():
     if not request.args.get('url'): return redirect('/')
-    return render_template('hls.html', hls=request.args.get('url'));
+    return render_template('hls.html', url=request.args.get('url'));
+
+@app.route('/rvideo/')
+def redditplayer():
+    if not request.args.get('url'): return redirect('/')
+    return render_template('hls2.html', url=request.args.get('url'));
 
 
 if __name__ == '__main__':
