@@ -30,7 +30,7 @@ def videoapi():
     if not request.args.get('url'): return redirect('/')
     return render_template('videoapi.html', url=request.args.get('url'));
 
-@app.route('/videoapi/')
+@app.route('/test/')
 def videoapi():
     a = print('hi')
     return render_template('videoapi.html', url=a);
