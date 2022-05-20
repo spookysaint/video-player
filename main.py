@@ -31,7 +31,7 @@ def videoapi():
     return render_template('videoapi.html', url=request.args.get('url'));
 
 @app.route('/test/')
-def videoapi():
+def test():
     a = print('hi')
     return render_template('videoapi.html', url=a);
 
