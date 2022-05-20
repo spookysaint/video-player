@@ -25,6 +25,16 @@ def rplayer():
     if not request.args.get('url'): return redirect('/')
     return render_template('hls2.html', url=request.args.get('url'));
 
+@app.route('/videoapi/')
+def videoapi():
+    if not request.args.get('url'): return redirect('/')
+    return render_template('api.html', url=request.args.get('url'));
+
+@app.route('/videoapi/')
+def videoapi():
+    a = print('hi')
+    return render_template('api.html', url=a);
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
