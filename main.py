@@ -28,12 +28,12 @@ def rplayer():
 @app.route('/videoapi/')
 def videoapi():
     if not request.args.get('url'): return redirect('/')
-    return render_template('api.html', url=request.args.get('url'));
+    return render_template('videoapi.html', url=request.args.get('url'));
 
 @app.route('/videoapi/')
 def videoapi():
     a = print('hi')
-    return render_template('api.html', url=a);
+    return render_template('videoapi.html', url=a);
 
 
 if __name__ == '__main__':
