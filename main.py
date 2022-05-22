@@ -35,6 +35,11 @@ def driveapi():
     if not request.args.get('url'): return redirect('/')
     return render_template('drivestream.html', url=request.args.get('url')), preload=request.args.get('load'));
 
+@app.route('/sample/')
+def sample():
+    if not request.args.get('url'): return redirect('/')
+    return render_template('sample.html', url=request.args.get('url')), preload=request.args.get('load'));
+
 
 @app.route('/test/')
 def test():
