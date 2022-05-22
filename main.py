@@ -33,7 +33,7 @@ def videoapi():
 @app.route('/stream/')
 def driveapi():
     if not request.args.get('url'): return redirect('/')
-    return render_template('videoapi.html', url=request.args.get('url')), preload=request.args.get('load'));
+    return render_template('drivestream.html', url=request.args.get('url')), preload=request.args.get('load'));
 
 
 @app.route('/test/')
