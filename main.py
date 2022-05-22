@@ -30,10 +30,16 @@ def videoapi():
     if not request.args.get('url'): return redirect('/')
     return render_template('videoapi.html', url=request.args.get('url'));
 
+@app.route('/stream/')
+def driveapi():
+    if not request.args.get('url'): return redirect('/')
+    return render_template('videoapi.html', url=request.args.get('url')), preload=request.args.get('load'));
+
+
 @app.route('/test/')
 def test():
-    a = print('hi')
-    return render_template('videoapi.html', url=a);
+    a = 'hi'
+    return a;
 
 
 if __name__ == '__main__':
