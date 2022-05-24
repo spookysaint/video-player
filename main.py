@@ -30,10 +30,15 @@ def videoapi():
     if not request.args.get('url'): return redirect('/')
     return render_template('videoapi.html', url=request.args.get('url'));
 
-@app.route('/stream/')
+@app.route('/stream1/')
 def driveapi():
     if not request.args.get('url'): return redirect('/')
     return render_template('drivestream.html', url=request.args.get('url'), preload=request.args.get('load'));
+
+@app.route('/stream/')
+def drivenoneapi():
+    if not request.args.get('url'): return redirect('/')
+    return render_template('drivestream.html', url=request.args.get('url'), preload='none');
 
 @app.route('/sample/')
 def sample():
