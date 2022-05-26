@@ -40,7 +40,7 @@ def drivenoneapi():
     if not request.args.get('url'): return redirect('/')
     return render_template('drivestream.html', url=request.args.get('url'), preload='none');
 
-@app.route('/sample/')
+@app.route('/rvid')
 def sample():
     if not request.args.get('url'): return redirect('/')
     return render_template('sample.html', url=request.args.get('url'), preload=request.args.get('load'));
