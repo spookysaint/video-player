@@ -57,10 +57,6 @@ def sample():
     return render_template('sample.html', url=request.args.get('url'), preload=request.args.get('load'));
 
 
-@app.route('/test/')
-def test():
-    a = 'hi'
-    return a;
 
 
 if __name__ == '__main__':
