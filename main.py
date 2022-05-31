@@ -10,6 +10,11 @@ def videoplayer():
     if not request.args.get('url'): return redirect('/')
     return render_template('videoplayer.html', url=request.args.get('url'));
 
+@app.route('/v2/')
+def videoplayer():
+    if not request.args.get('url'): return redirect('/')
+    return render_template('videoplayer2.html', url=request.args.get('url'));
+
 @app.route('/video/')
 def video():
     if not request.args.get('url'): return redirect('/')
@@ -29,6 +34,7 @@ def rplayer():
 def videoapi():
     if not request.args.get('url'): return redirect('/')
     return render_template('videoapi.html', url=request.args.get('url'));
+
 
 @app.route('/stream1/')
 def driveapi():
