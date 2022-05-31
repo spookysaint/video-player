@@ -11,7 +11,7 @@ def videoplayer():
     return render_template('videoplayer.html', url=request.args.get('url'));
 
 @app.route('/v2/')
-def videoplayer():
+def vidaplayer():
     if not request.args.get('url'): return redirect('/')
     return render_template('videoplayer2.html', url=request.args.get('url'));
 
