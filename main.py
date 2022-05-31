@@ -23,7 +23,7 @@ def video():
 @app.route('/audio/')
 def audio():
     if not request.args.get('url'): return redirect('/')
-    return render_template('audioplayer.html', url=request.args.get('url'));
+    return render_template('audioplayer.html', url=request.args.get('url'), load=request.args.get('load'));
 
 @app.route('/redditvideo/')
 def redditplayer():
