@@ -13,12 +13,17 @@ def videoplayer():
 @app.route('/v2/')
 def vidaplayer():
     if not request.args.get('url'): return redirect('/')
-    return render_template('videoplayer2.html', url=request.args.get('url'));
+    return render_template('videoplayer2.html', url=request.args.get('url'), load=request.args.get('load'));
 
 @app.route('/video/')
 def video():
     if not request.args.get('url'): return redirect('/')
     return render_template('videoplayer.html', url=request.args.get('url'));
+
+@app.route('/audio/')
+def audio():
+    if not request.args.get('url'): return redirect('/')
+    return render_template('audioplayer.html', url=request.args.get('url'));
 
 @app.route('/redditvideo/')
 def redditplayer():
