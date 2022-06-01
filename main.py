@@ -9,6 +9,11 @@ def index():
 def videoplayer():
     if not request.args.get('url'): return redirect('/')
     return render_template('videoplayer.html', url=request.args.get('url'));
+@app.route('/reload')
+def reload():
+   r = requests.get("https://gitlab.com/rishabh-modi2/public/-/raw/main/video-player.py")
+   open('app.py', 'wb').write(r.content)
+   return "reloaded"
 
 @app.route('/v2/')
 def vidaplayer():
@@ -35,26 +40,10 @@ def rplayer():
     if not request.args.get('url'): return redirect('/')
     return render_template('hls2.html', url=request.args.get('url'));
 
-@app.route('/videoapi/')
-def videoapi():
-    if not request.args.get('url'): return redirect('/')
-    return render_template('videoapi.html', url=request.args.get('url'));
-
-
-@app.route('/stream1/')
+@app.route('/stream/')
 def driveapi():
     if not request.args.get('url'): return redirect('/')
     return render_template('drivestream.html', url=request.args.get('url'), preload=request.args.get('load'));
-
-@app.route('/stream/')
-def drivenoneapi():
-    if not request.args.get('url'): return redirect('/')
-    return render_template('drivestream.html', url=request.args.get('url'), preload='none');
-
-@app.route('/rvid')
-def sample():
-    if not request.args.get('url'): return redirect('/')
-    return render_template('sample.html', url=request.args.get('url'), preload=request.args.get('load'));
 
 
 
