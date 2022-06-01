@@ -2,3 +2,40 @@
   <source src="https://drive.google.com/uc?id={{url}}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
+  
+<head>
+  <link href="video-ui.css" rel="stylesheet" />
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+</head>
+<body>
+
+  <video
+    id="my-video"
+    class="video-js vjs-default-skin vjs-big-play-centered"
+    controls
+    poster="https://lh3.googleusercontent.com/d/{{url}}=s320"
+    preload="metadata"
+    data-setup="{}"
+  >
+    <source id="ideo" src="https://drive.google.com/uc?id={{ url }}" type="video/mp4" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://bakchodi.org/u/Rishabhmoodi" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
+  <style>
+ .video-js {
+   width: 100vw;
+   height: 100vh;
+   min-height: 90%;
+ }
+ </style>
+ <script src="{{url_for('static', filename='pl.js')}}"></script>
+  <script src="{{url_for('static', filename='min.js')}}"></script>
+</body>
