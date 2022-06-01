@@ -43,7 +43,7 @@ def rplayer():
 @app.route('/stream/')
 def driveapi():
     if not request.args.get('url'): return redirect('/')
-    return render_template('drivestream.html', url=request.args.get('url'), preload=request.args.get('load'));
+    return render_template('drivestream.html', url=request.args.get('url'), loading=request.args.get('loading'));
 
 
 
