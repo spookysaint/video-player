@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect
+import base64, requests
 app = Flask(__name__)
 
 @app.route('/')
@@ -43,7 +44,11 @@ def rplayer():
 @app.route('/stream/')
 def driveapi():
     if not request.args.get('url'): return redirect('/')
-    return render_template('drivestream.html', url=request.args.get('url'), loading=request.args.get('loading'));
+    base64_string = request.args.get('url')
+    base64_bytes = base64_string.encode("ascii")
+    sample_string_bytes = base64.b64decode(base64_bytes)
+    sample_string = sample_string_bytes.decode("ascii")
+    return render_template('drivestream.html', url=f"{sample_string}", loading=request.args.get('loading'));
 
 
 
