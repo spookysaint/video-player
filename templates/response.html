@@ -1,0 +1,15 @@
+<textarea id="textarea" rows="5" cols="100" wrap> {{ embedcode }} </textarea>
+<br>
+<button onclick="copy()">Copy to Clipboard</button>
+<script>
+function copy() {
+  let textarea = document.getElementById("textarea");
+  textarea.select();
+  document.execCommand("copy");
+}
+</script>
+<style>
+textarea {
+	width: 100%;
+}
+</style>
