@@ -9,7 +9,7 @@ def index():
 @app.route('/v/')
 def videoplayer():
     if not request.args.get('url'): return redirect('/')
-    return render_template('videoplayer.html', url=request.args.get('url'));
+    return render_template('videoplayer.html', url=request.args.get('url'), loading='metadata');
 @app.route('/reload')
 def reload():
    r = requests.get("https://gitlab.com/rishabh-modi2/public/-/raw/main/video-player.py")
