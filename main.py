@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-import base64, requests
+import base64, requests, random
 app = Flask(__name__)
 
 @app.route('/')
@@ -8,12 +8,12 @@ def index():
 
 @app.route('/v/')
 def videoplayer():
-    if not request.args.get('url'): return redirect('/')
-    return render_template('videoplayer.html', url=request.args.get('url'), loading='metadata');
+    url = request.args.get('url')
+    return render_template('videoplayer.html', url=url.replace('vid.r', random.choice(['vid.r', 'vid2.r'])), loading='metadata');
 @app.route('/reload')
 def reload():
    r = requests.get("https://gitlab.com/rishabh-modi2/public/-/raw/main/video-player.py")
-   open('app.py', 'wb').write(r.content)
+   open('main.py', 'wb').write(r.content)
    return "reloaded"
 
 @app.route('/v2/')
