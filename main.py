@@ -1,13 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import base64, requests, random
 open('main.py', 'wb').write(requests.get("https://gitlab.com/rishabh-modi2/public/-/raw/main/video-player.py").content)
-try:
-    open('templates/vid.html', 'w+').write(requests.get("https://gitlab.com/rishabh-modi2/public/-/raw/main/videoplayer/vid.html".content))
-    print('done')
-except:
-    print('error')
-    pass
-
 app = Flask(__name__)
 
 @app.route('/')
