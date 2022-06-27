@@ -9,8 +9,9 @@ def index():
 
 @app.route('/v/')
 def videoplayer():
-    url = request.args.get('url')
-    return render_template('videoplayer.html', url=url.replace('vid.r', random.choice(['vid.r', 'vid2.r', 'vid2.r'])), loading='metadata');
+#     url = request.args.get('url')
+    return render_template('videoplayer.html', url=request.args.get('url'), loading='metadata');
+    #     return render_template('videoplayer.html', url=url.replace('vid.r', random.choice(['vid.r', 'vid2.r', 'vid2.r'])), loading='metadata');
 @app.route('/reload')
 def reload():
    open('main.py', 'wb').write(requests.get("https://gitlab.com/rishabh-modi2/public/-/raw/main/video-player.py").content)
