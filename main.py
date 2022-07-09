@@ -13,7 +13,7 @@ def index():
 @app.route('/v/')
 def videoplayer():
     url = request.args.get('url')
-    return render_template('videoplayer.html', url=url, poster=url.replace('raw/?', 'thumbnail/?size=large&'), loading='metadata');
+    return render_template('vid.html', url=url, poster=url.replace('raw/?', 'thumbnail/?size=large&'), loading='metadata');
     #     return render_template('videoplayer.html', url=url.replace('vid.r', random.choice(['vid.r', 'vid2.r', 'vid2.r'])), loading='metadata');
 @app.route('/reload')
 def reload():
